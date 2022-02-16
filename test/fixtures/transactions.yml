@@ -2,10 +2,10 @@
 
 one:
   amount: 9.99
-  account_no: MyString
+  account: one
   tran_type: MyString
 
 two:
   amount: 9.99
-  account_no: MyString
+  account: two
   tran_type: MyString
