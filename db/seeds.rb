@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Transaction.destroy_all
+Account.destroy_all
+
+Account.create({
+  name: "Rajesh",
+  balance: 1000,
+  account_no: 1
+})
+
+Account.first.transactions.create({
+  tran_type: "D",
+  amount: 100
+})
