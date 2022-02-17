@@ -6,6 +6,13 @@ class AccountsController < ApplicationController
     @accounts = Account.all
   end
 
+  def activities
+    account_id = params[:account_id]
+
+    @transactions = Transaction.where(account_id: account_id).includes(:account)
+
+  end
+
   # GET /accounts/1 or /accounts/1.json
   def show
   end
