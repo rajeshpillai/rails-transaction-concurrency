@@ -8,7 +8,11 @@ class Transaction < ApplicationRecord
     account = Account.find(self.account_id) 
 
     if self.tran_type == "D" 
-      account.balance -= self.amount
+      if (self.amount < account.balance) 
+        account.balance -= self.amount
+      else
+        raise "Insufficient account balance!"
+      end
     elsif self.tran_type == "C"
       account.balance += self.amount
     end

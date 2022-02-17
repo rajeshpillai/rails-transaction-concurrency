@@ -15,7 +15,9 @@ Account.create({
   account_no: 1
 })
 
-Account.first.transactions.create({
-  tran_type: "D",
-  amount: 100
-})
+200.times do |index|
+  Account.first.transactions.create({
+    tran_type: "D",
+    amount: 100
+  })
+end
